@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # local
     "accounts.apps.AccountsConfig",  # new
     "pages.apps.PagesConfig",  # new
+    "articles.apps.ArticlesConfig",  # new
 ]
 
 MIDDLEWARE = [
@@ -131,3 +132,13 @@ LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"  # new
+DEFAULT_FROM_EMAIL = "jacob3.olson@umontana.edu"
+EMAIL_HOST = "smtp.sendgrid.net"
+EMAIL_HOST_USER = "apikey"
+EMAIL_HOST_PASSWORD = (
+    "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"
+)
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+TIME_ZONE = "America/Mazatlan"
